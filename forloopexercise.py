@@ -5,5 +5,7 @@ numbers = [
 for i in numbers:
     if i % 2 == 0:
         print(i)
-    if i == 237:
+    elif i == 237:
         break
+
+#Link for flowchart -> https://app.lucidchart.com/invitations/accept/f3a7c2fc-1594-4923-abcd-9f12788999f4
