@@ -8,4 +8,4 @@ for i in numbers:
     elif i == 237:
         break
 
-#Link for flowchart -> https://app.lucidchart.com/invitations/accept/f3a7c2fc-1594-4923-abcd-9f12788999f4
+#Link for flowchart -> https://app.lucidchart.com/invitations/accept/20d2fe01-3cf7-484a-aa36-0805e7aaab3e
