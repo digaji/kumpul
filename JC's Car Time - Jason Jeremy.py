@@ -25,6 +25,7 @@ class Car:
         for car in other_company.cars:
             if self.is_better_than(car) == "yes":
                 self.counter += 1
+        # I use return instead of print because, if not, it will also print a None when being called with print on the last line of code
         return(f"Our car, {self.model} is better than {self.counter} out of {len(other_company.cars)} of all the cars in their company.")
 
 class Company:
