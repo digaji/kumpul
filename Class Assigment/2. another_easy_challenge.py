@@ -1,44 +1,42 @@
 class Circle:
-    def __init__(self, radius, color):
-        self.radius = radius
-        self.color = color
+    def __init__(self, radius=1.0, color="red"):
+        self.__radius = radius
+        self.__color = color
 
     def getRadius(self):
-        return self.radius
+        return self.__radius
 
     def setRadius(self, radius):
-        self.radius = radius
+        self.__radius = radius
 
     def getColor(self):
-        return self.color
+        return self.__color
 
     def setColor(self, color):
-        self.color = color
+        self.__color = color
 
     def toString(self):
-        return f"Radius: {self.radius}\nColor: {self.color}"
+        return f"Radius: {self.__radius}\nColor: {self.__color}"
 
     def getArea(self):
         from math import pi
 
-        return pi * (self.radius ** 2)
+        return pi * (self.__radius ** 2)
 
 
 class Cylinder(Circle):
-    def __init__(self, radius, color, height):
+    def __init__(self, radius=1.0, color="red", height=1.0):
         super().__init__(radius, color)
-        self.height = height
+        self.__height = height
 
     def getHeight(self):
-        return self.height
+        return self.__height
 
     def setHeight(self, height):
-        self.height = height
+        self.__height = height
 
     def toString(self):
-        return f"Radius: {self.radius}\nColor: {self.color}\nHeight: {self.height}"
+        return f"Radius: {self.__radius}\nColor: {self.__color}\nHeight: {self.__height}"
 
     def getVolume(self):
-        from math import pi
-
-        return pi * (self.radius ** 2) * self.height
+        return self.getArea() * self.__height
