@@ -1,6 +1,6 @@
 class Circle:
     def __init__(self, radius=1.0, color="red"):
-        self.__radius = radius
+        self.__radius = float(radius)
         self.__color = color
 
     def getRadius(self):
@@ -27,7 +27,7 @@ class Circle:
 class Cylinder(Circle):
     def __init__(self, radius=1.0, color="red", height=1.0):
         super().__init__(radius, color)
-        self.__height = height
+        self.__height = float(height)
 
     def getHeight(self):
         return self.__height
