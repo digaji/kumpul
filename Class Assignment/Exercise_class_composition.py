@@ -20,7 +20,7 @@ class Author:
         return f"Author[name={self.__name},email={self.__email},gender={self.__gender}]"
 
 
-class Book(Author):
+class Book:
     def __init__(self, name, author, price, qty=0):
         self.__name = name
         self.__author = author
@@ -65,7 +65,7 @@ class Book(Author):
 # print(cinta.getAuthorName(), cinta.getAuthorEmail(), cinta.getAuthorGender())
 
 
-class Book(Author):
+class Book:
     def __init__(self, name, authors, price, qty=0):
         self.__name = name
         self.__authors = [authors]
