@@ -3,6 +3,8 @@ class Author:
         self.__name = name
         self.__email = email
         self.__gender = gender
+        if gender != "m" and gender != "f":
+            raise ValueError
 
     def getName(self):
         return self.__name
@@ -16,7 +18,7 @@ class Author:
     def getGender(self):
         return self.__gender
 
-    def toString(self):
+    def __str__(self):
         return f"Author[name={self.__name},email={self.__email},gender={self.__gender}]"
 
 
@@ -45,8 +47,8 @@ class Book:
     def setQty(self, qty):
         self.__qty = qty
 
-    def toString(self):
-        return f"Book[name={self.__name},{self.__author.toString()},price={self.__price},qty={self.__qty}]"
+    def __str__(self):
+        return f"Book[name={self.__name},{self.__author},price={self.__price},qty={self.__qty}]"
 
     def getAuthorName(self):
         return self.__author.getName()
@@ -58,17 +60,18 @@ class Book:
         return self.__author.getGender()
 
 
-# radit = Author("Radit", "radit@radit.com", "m")
-# cinta = Book("Cinta Brontosaurus", radit, 100, 10)
+radit = Author("Radit", "radit@radit.com", "m")
+cinta = Book("Cinta Brontosaurus", radit, 100, 10)
 
-# print(cinta.getAuthor().getName(), cinta.getAuthor().getEmail())
-# print(cinta.getAuthorName(), cinta.getAuthorEmail(), cinta.getAuthorGender())
+print(cinta)
+print(cinta.getAuthor().getName(), cinta.getAuthor().getEmail())
+print(cinta.getAuthorName(), cinta.getAuthorEmail(), cinta.getAuthorGender())
 
 
 class Book:
     def __init__(self, name, authors, price, qty=0):
         self.__name = name
-        self.__authors = [authors]
+        self.__authors = authors
         self.__price = price
         self.__qty = qty
 
@@ -90,20 +93,26 @@ class Book:
     def setQty(self, qty):
         self.__qty = qty
 
-    def toString(self):
+    def __str__(self):
         return (
             f"Book[name={self.__name},"
-            f"authors=" + "{" + str(list(map(lambda x: x.toString(), *self.__authors))).replace("'", "").strip("[]") + "]}," +
-            f"price={self.__price},"
+            f"authors="
+            + "{"
+            + str(list(map(lambda x: str(x), self.__authors))).replace("'", "").strip("[]")
+            + "]},"
+            + f"price={self.__price},"
             f"qty={self.__qty}]"
         )
 
     def getAuthorNames(self):
-        return str(list(map(lambda x: x.getName(), *self.__authors))).strip("[]")
+        return (
+            str(list(map(lambda x: x.getName(), self.__authors))).replace("'", '"').strip("[]")
+        )
 
 
 radit = Author("Radit", "radit@radit.com", "m")
 boyke = Author("Boyke", "boyke@boyke.com", "m")
 cinta = Book("Cinta Brontosaurus", [radit, boyke], 100, 10)
 
+print(cinta)
 print(cinta.getAuthorNames())
