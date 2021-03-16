@@ -69,12 +69,11 @@ public class AscendedExercise1 {
                     for (int k = 0; k < firstMatrix[row].length; k++) { // Go through all dot product from one row
                         product += firstMatrix[row][k] * secondMatrix[k][column];
                     }
-                    System.out.print(product + " ");
-                    product = 0;
                 }
+                System.out.print(product + " ");
+                product = 0;
                 System.out.println();   // New line after each column
             }
-
             sc.close();
             flag = false;
         }
