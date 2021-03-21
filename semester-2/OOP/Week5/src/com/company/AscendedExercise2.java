@@ -36,6 +36,6 @@ public class AscendedExercise2 {
         // Don't forget the last character
         matcher.appendTail(stringBuffer);
 
-        System.out.println(input + "  -->  " + stringBuffer.toString());
+        System.out.println(input + "  -->  " + stringBuffer);
     }
 }
