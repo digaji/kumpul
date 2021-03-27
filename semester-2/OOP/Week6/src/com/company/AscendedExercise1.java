@@ -5,8 +5,6 @@ public class AscendedExercise1 {
         for (int i = 1; i <= 500; i++) {
             if (primeChecker(i)) {
                 System.out.println(i + " is prime");
-            } else {
-                System.out.println(i + " is not prime");
             }
         }
     }
